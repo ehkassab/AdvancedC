@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace AdvancedC
 {
     class Program
@@ -7,7 +8,9 @@ namespace AdvancedC
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            //first checkin.
+            //Generics.Generics.InitiateSalaryDemo();
+            Generics.Generics.InitiateNonGenerciSortArray();
+            Console.ReadKey();
         }
     }
 }
