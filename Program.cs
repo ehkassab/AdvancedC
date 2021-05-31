@@ -1,7 +1,6 @@
-﻿using AdvancedC.Inheritance;
-using AdvancedC.PS;
-using System;
-
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace AdvancedC
 {
@@ -26,10 +25,14 @@ namespace AdvancedC
             //matrix[1] = "WHI";
             //matrix[2] = "UBU";
             //var res = soly.solution(matrix, "HI");
-
-
-            CollectionsCrs.CollectionsFunc();
+            int[] arrayval = { -21, 301, 12, 4, 65, 56, 210, 356, 9, -47 }; 
+            //"array": [3, 5, -4, 8, 11, 1, -1, 6],
+            //CollectionsCrs.CollectionsFunc();
+            AlgoExpert.TwoNumberSum(arrayval, 164);
             Console.ReadKey();
+
+            Hashtable hashtable = new Hashtable();
+            Dictionary<int,int> dic = new Dictionary<int,int>();
 
 
         }
