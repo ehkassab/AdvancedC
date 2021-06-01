@@ -34,9 +34,6 @@ namespace AdvancedC.PS
 
             }
 
-            Dictionary dic = new System.Collections.Generic.Dictionary();
-
-
         }
     }
 }
