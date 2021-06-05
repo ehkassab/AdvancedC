@@ -9,17 +9,17 @@ namespace AdvancedC
         #region TwoNumberSum
         public static int[] TwoNumberSum(int[] array, int targetSum)
         {
-                int[] result = new int[2];
-                bool reached = false;
-                for (int i = 0; i < array.Length; i++)
+            int[] result = new int[2];
+            bool reached = false;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length; j++)
                 {
-                    for (int j = 0; j < array.Length; j++)
+                    if (array[i] + array[j] == targetSum && i != j)
                     {
-                        if (array[i] + array[j] == targetSum && i != j)
-                        {
-                            result[0] = array[i];
-                            result[1] = array[j];
-                            reached = true;
+                        result[0] = array[i];
+                        result[1] = array[j];
+                        reached = true;
                         break;
                     }
                 }
@@ -55,9 +55,9 @@ namespace AdvancedC
             foreach (var num in array)
             {
                 int targetval = targetSum - num;
-                if(nums.Contains(num))
+                if (nums.Contains(num))
                 {
-                    return new int[] {targetval, num };
+                    return new int[] { targetval, num };
                 }
                 else
                 {
@@ -109,6 +109,42 @@ namespace AdvancedC
                 }
             }
             return crntSeq == sequence.Count;
+        }
+        #endregion
+
+        #region Sorted Squared array
+        public int[] SortedSquaredArray(int[] array)
+        {
+            int[] newArr = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                newArr[i] = array[i] * array[i];
+            }
+            Array.Sort(newArr);
+            return newArr;
+        }
+
+        public int[] SortedSquaredArraySec(int[] array)
+        {
+            int[] newArr = new int[array.Length];
+            int smalleridx = newArr[0];
+            int largeridx = newArr[array.Length-1];
+            for (int idx = array.Length-1 ; idx >=0 ; idx--)
+            {
+                int smallVal = array[smalleridx];
+                int largeVal = array[largeridx];
+                if(Math.Abs(smallVal) > Math.Abs(largeVal))
+                {
+                    newArr[idx] = smallVal * smallVal;
+                    smalleridx++;
+                }
+                else
+                {
+                    newArr[idx] = largeVal * largeVal;
+                    largeridx++;
+                }
+            }
+            return newArr;
         }
         #endregion
     }
