@@ -147,5 +147,95 @@ namespace AdvancedC
             return newArr;
         }
         #endregion
+
+        #region NonConstructibleChange
+        public int NonConstructibleChange(int[] coins)
+        {
+            Array.Sort(coins);
+            int curntChanged = 0;
+            foreach (var coin in coins)
+            {
+                if(coin > curntChanged +1)
+                {
+                    return curntChanged + 1;
+                }
+                curntChanged += coin;
+            }
+
+            return curntChanged + 1;
+        }
+        #endregion
+
+        #region BinarySearchTree
+        public static int FindClosestValueInBst(BST tree, int target)
+        {
+           return FindClosestValueInBst(tree, target, tree.value);
+        }
+
+        public static int FindClosestValueInBst(BST tree, int target,int closest)
+        {
+            if(Math.Abs(target - closest) > Math.Abs(target - tree.value))
+            {
+                closest = tree.value;
+            }
+
+            if (target < tree.value && tree.left != null)
+            {
+                return FindClosestValueInBst(tree.left, target, closest);
+            }
+            else if (target > tree.value && tree.right != null)
+            {
+                return FindClosestValueInBst(tree.right, target, closest);
+            }
+            else return closest;
+        }
+
+        public static List<int> BranchSums(BinaryTree root)
+        {
+            List<int> sums = new List<int>();
+            calculateSum(root, 0, sums);
+            return sums;
+        }
+
+        public static void calculateSum(BinaryTree node, int sum, List<int> sums)
+        {
+            if (node == null) return;
+            int newSum = sum + node.value;
+            if (node.left == null && node.right == null)
+            {
+                sums.Add(newSum);
+                return;
+            }
+            calculateSum(node.left, newSum, sums);
+            calculateSum(node.right, newSum, sums);
+        }
+        #endregion
+
+    }
+
+    public class BST
+    {
+        public int value;
+        public BST left;
+        public BST right;
+
+        public BST(int value)
+        {
+            this.value = value;
+        }
+    }
+
+    public class BinaryTree
+    {
+        public int value;
+        public BinaryTree left;
+        public BinaryTree right;
+
+        public BinaryTree(int value)
+        {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
     }
 }
