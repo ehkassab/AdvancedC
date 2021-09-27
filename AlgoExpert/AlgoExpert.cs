@@ -67,7 +67,6 @@ namespace AdvancedC
             return new int[0];
         }
 
-
         #endregion
 
         #region SubSequence Array
@@ -189,7 +188,6 @@ namespace AdvancedC
             }
             else return closest;
         }
-
         public static List<int> BranchSums(BinaryTree root)
         {
             List<int> sums = new List<int>();
@@ -210,7 +208,6 @@ namespace AdvancedC
             calculateSum(node.right, newSum, sums);
         }
         #endregion
-
     }
 
     public class BST

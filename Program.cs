@@ -25,16 +25,23 @@ namespace AdvancedC
             //matrix[1] = "WHI";
             //matrix[2] = "UBU";
             //var res = soly.solution(matrix, "HI");
-            int[] arrayval = { -21, 301, 12, 4, 65, 56, 210, 356, 9, -47 }; 
+            //int[] arrayval = { -21, 301, 12, 4, 65, 56, 210, 356, 9, -47 }; 
             //"array": [3, 5, -4, 8, 11, 1, -1, 6],
             //CollectionsCrs.CollectionsFunc();
-            AlgoExpert.TwoNumberSum(arrayval, 164);
+            //AlgoExpert.TwoNumberSum(arrayval, 164);
+            testYieldb();
             Console.ReadKey();
+            //Hashtable hashtable = new Hashtable();
+            //Dictionary<int,int> dic = new Dictionary<int,int>();
 
-            Hashtable hashtable = new Hashtable();
-            Dictionary<int,int> dic = new Dictionary<int,int>();
 
+        }
 
+        public static IEnumerable<int> testYieldb()
+        {
+            yield return 4;
+            Console.WriteLine("abc");
+            yield return 4;
         }
         // this in refrene number, make pass by refrence to be readonly.
         public int OnlyInByRef(in int number)
