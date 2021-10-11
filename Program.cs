@@ -8,17 +8,17 @@ namespace AdvancedC
     {
         static void Main(string[] args)
         {
+
+            #region HistoryCall
             //CallGenerics();
             //CallGeneral();
             //string name = "Eslam";
             //Console.WriteLine($"Your Name Is : {name}");
             //Console.WriteLine("Your Name Is : {0}",name);
             //System.Int32 is struct and int is alias to that struct.
-
             //var b = new B();
             //var a = (A)b;
             //a.Dowork();
-
             //Solution soly = new Solution();
             //string[] matrix = new string[3];
             //matrix[0] = "QZF";
@@ -29,17 +29,25 @@ namespace AdvancedC
             //"array": [3, 5, -4, 8, 11, 1, -1, 6],
             //CollectionsCrs.CollectionsFunc();
             //AlgoExpert.TwoNumberSum(arrayval, 164);
-            testYieldb();
-            Console.ReadKey();
             //Hashtable hashtable = new Hashtable();
             //Dictionary<int,int> dic = new Dictionary<int,int>();
+            #endregion
+            //LinkedList<int> vs = new LinkedList<int>();
+            //testYieldb();
+            //Func<int, int> square = x => x * x;
+            //Console.WriteLine(square(3));
 
+            //del1 += del3;
+            //del2(8, "eshta");
 
+            // DoWork(del1);
+            //DoWork(del2);
+            Console.ReadKey();
         }
 
         public static IEnumerable<int> testYieldb()
         {
-            yield return 4;
+            yield return 4; // defrred execution.
             Console.WriteLine("abc");
             yield return 4;
         }
@@ -55,6 +63,7 @@ namespace AdvancedC
             Generics.Generics.InitiateNonGenerciSortArray();
             Console.ReadKey();
         }
+
         public static void CallGeneral()
         {
             int? e = null;

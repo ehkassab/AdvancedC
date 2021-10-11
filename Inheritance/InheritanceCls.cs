@@ -28,7 +28,6 @@ namespace AdvancedC.Inheritance
             int row = -1;
             for (int i = 0; i < A.Length; i++)
             {
-
                 if(A[i].Contains(T))
                 {
                     row = i;
