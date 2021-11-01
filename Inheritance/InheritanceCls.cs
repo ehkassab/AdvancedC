@@ -40,4 +40,13 @@ namespace AdvancedC.Inheritance
             return result;
         }
     }
+
+    public class ExciplictTry : IExciplictTry
+    {
+        public void GetAge()
+        {
+            Console.WriteLine("ExciplictTry GetAge");
+        }
+        void IExciplictTry.GetName(){}
+    }
 }

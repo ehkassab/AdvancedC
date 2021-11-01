@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AdvancedC
 {
@@ -8,7 +11,6 @@ namespace AdvancedC
     {
         static void Main(string[] args)
         {
-
             #region HistoryCall
             //CallGenerics();
             //CallGeneral();
@@ -31,7 +33,7 @@ namespace AdvancedC
             //AlgoExpert.TwoNumberSum(arrayval, 164);
             //Hashtable hashtable = new Hashtable();
             //Dictionary<int,int> dic = new Dictionary<int,int>();
-            #endregion
+
             //LinkedList<int> vs = new LinkedList<int>();
             //testYieldb();
             //Func<int, int> square = x => x * x;
@@ -42,7 +44,36 @@ namespace AdvancedC
 
             // DoWork(del1);
             //DoWork(del2);
+            #endregion
+            //object eslam = null;
+            //var s = eslam ?? "eslam";
+            //var t = eslam ?? default;
+            //var tr = CallerData();
+            //Action action = () => Console.Write("I'm action");
+            Thread thread = new Thread(()=> {
+                for (int i = 0; i < 1000; i++) Console.Write("Y");
+            });
+
+            Task.Run(()=> Console.WriteLine("eslam"));
+
+            SortedList<int, string> keyValuePairs = new SortedList<int, string>();
+
+            thread.Start();
+            for (int i = 0; i < 1000; i++) Console.Write("X");
+            //Console.WriteLine(action);
+
+
             Console.ReadKey();
+        }
+
+        void WriteY()
+        {
+            for (int i = 0; i < 1000; i++) Console.Write("Y");
+        }
+
+        public static string CallerData([CallerMemberName] string caller = null)
+        {
+            return caller;
         }
 
         public static IEnumerable<int> testYieldb()

@@ -177,4 +177,18 @@ namespace AdvancedC.Generics
             return $"{Id} {Name}";
         }
     }
+
+    class RabbitList : ArrayList
+    {
+        public int Add(Employee employee)
+        {
+            return base.Add(employee);
+        }
+
+        public Employee this[int index]
+        {
+            get { return base[index] as Employee; }
+            set { base[index] = value; }
+        }
+    }
 }
