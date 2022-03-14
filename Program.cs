@@ -57,7 +57,9 @@ namespace AdvancedC
             Task.Run(()=> Console.WriteLine("eslam"));
 
             SortedList<int, string> keyValuePairs = new SortedList<int, string>();
-
+            keyValuePairs.Add(5,"eslam");
+            keyValuePairs.Add(7,"Ahmed");
+            SortedList<int, int> sItem = new SortedList<int, int>();
             thread.Start();
             for (int i = 0; i < 1000; i++) Console.Write("X");
             //Console.WriteLine(action);
