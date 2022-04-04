@@ -185,10 +185,10 @@ namespace AdvancedC.Generics
             return base.Add(employee);
         }
 
-        public Employee this[int index]
-        {
-            get { return base[index] as Employee; }
-            set { base[index] = value; }
-        }
+        //public Employee this[int index]
+        //{
+        //    get { return base[index] as Employee; }
+        //    set { base[index] = value; }
+        //}
     }
 }

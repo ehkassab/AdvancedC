@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvancedC.DS_Book;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,15 @@ namespace AdvancedC
     {
         static void Main(string[] args)
         {
+            //Array_Notes array_Notes = new Array_Notes();
+            //array_Notes.PrintgMultiplicationTable();
+
+            int[] notsoterd = { 3, 6, 4, 1, 12, 9 };
+
+            SortingAlgos.SelectionSort(notsoterd);
+
+
+
             #region HistoryCall
             //CallGenerics();
             //CallGeneral();
@@ -44,26 +54,26 @@ namespace AdvancedC
 
             // DoWork(del1);
             //DoWork(del2);
-            #endregion
+
             //object eslam = null;
             //var s = eslam ?? "eslam";
             //var t = eslam ?? default;
             //var tr = CallerData();
             //Action action = () => Console.Write("I'm action");
-            Thread thread = new Thread(()=> {
-                for (int i = 0; i < 1000; i++) Console.Write("Y");
-            });
+            //Thread thread = new Thread(()=> {
+            //    for (int i = 0; i < 1000; i++) Console.Write("Y");
+            //});
 
-            Task.Run(()=> Console.WriteLine("eslam"));
+            //Task.Run(()=> Console.WriteLine("eslam"));
 
-            SortedList<int, string> keyValuePairs = new SortedList<int, string>();
-            keyValuePairs.Add(5,"eslam");
-            keyValuePairs.Add(7,"Ahmed");
-            SortedList<int, int> sItem = new SortedList<int, int>();
-            thread.Start();
-            for (int i = 0; i < 1000; i++) Console.Write("X");
+            //SortedList<int, string> keyValuePairs = new SortedList<int, string>();
+            //keyValuePairs.Add(5,"eslam");
+            //keyValuePairs.Add(7,"Ahmed");
+            //SortedList<int, int> sItem = new SortedList<int, int>();
+            //thread.Start();
+            //for (int i = 0; i < 1000; i++) Console.Write("X");
             //Console.WriteLine(action);
-
+            #endregion
 
             Console.ReadKey();
         }
