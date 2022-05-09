@@ -9,7 +9,7 @@ namespace AdvancedC.DS_Book
     public class Array_Notes
     {
         /*
-         * eslam
+         * eslam From MAC
          * 1- Arrays used to store items of same type
          * 2- Arrays 
          */
