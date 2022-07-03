@@ -19,7 +19,9 @@ namespace AdvancedC
 
             SortingAlgos.SelectionSort(notsoterd);
 
-
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add("e");
+            arrayList.Add(1);
 
             #region HistoryCall
             //CallGenerics();

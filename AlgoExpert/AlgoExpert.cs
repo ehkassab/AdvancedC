@@ -208,6 +208,61 @@ namespace AdvancedC
             calculateSum(node.right, newSum, sums);
         }
         #endregion
+
+        #region Stacks
+       
+        #endregion
+    }
+
+
+    public class MinMaxStack
+    {
+        List<Dictionary<string, int>> mmstack = new List<Dictionary<string, int>>();
+        List<int> stack = new List<int>();
+        public int Peek()
+        {
+            return stack[stack.Count - 1];
+        }
+
+        public int Pop()
+        {
+            mmstack.RemoveAt(mmstack.Count - 1);
+            var val = stack[stack.Count - 1];
+            stack.RemoveAt(stack.Count - 1);
+            return val;
+        }
+
+
+        public void Push(int number)
+        {
+            Dictionary<string, int> newmmstack = new Dictionary<string, int>();
+            newmmstack.Add("min", number);
+            newmmstack.Add("max", number);
+            if (mmstack.Count > 0)
+            {
+                Dictionary<string, int> lastmmstack = new Dictionary<string, int>(
+                    mmstack[mmstack.Count - 1]
+                    );
+
+                newmmstack["min"] = Math.Min(lastmmstack["min"], number);
+                newmmstack["max"] = Math.Min(lastmmstack["max"], number);
+
+            }
+            mmstack.Add(newmmstack);
+            stack.Add(number);
+        }
+
+
+        public int GetMin()
+        {
+            return mmstack[mmstack.Count - 1]["min"];
+        }
+
+
+        public int GetMax()
+        {
+            return mmstack[mmstack.Count - 1]["max"];
+        }
     }
 
     public class BST
